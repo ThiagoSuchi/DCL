@@ -43,3 +43,7 @@ grant 'app_read'@'localhost', 'app_write'@'localhost' to 'rw_user3'@'localhost';
 
 flush privileges;
 
+# 05 - Modificar o perfil de acesso do usuário aluno, limitando seus recurso.
+alter user 'aluno'@'localhost' with max_queries_per_hour 20
+max_updates_per_hour 10 max_connections_per_hour 5
+max_user_connections 2;
